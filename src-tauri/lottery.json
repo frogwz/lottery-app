@@ -1,0 +1,52 @@
+{
+  "employees": [
+    {
+      "name": "张三",
+      "avatar": "101.jpg"
+    },
+    {
+      "name": "李四"
+    },
+    {
+      "name": "王五"
+    },
+    {
+      "name": "赵六"
+    },
+    {
+      "name": "陈七1"
+    }
+  ],
+  "prizes": [
+    {
+      "level": "lucky",
+      "name": "幸运奖",
+      "count": 1,
+      "prize": "精美礼品一份"
+    },
+    {
+      "level": "third",
+      "name": "三等奖",
+      "count": 1,
+      "prize": "蓝牙耳机"
+    },
+    {
+      "level": "second",
+      "name": "二等奖",
+      "count": 1,
+      "prize": "智能手表"
+    },
+    {
+      "level": "first",
+      "name": "一等奖",
+      "count": 1,
+      "prize": "平板电脑"
+    },
+    {
+      "level": "special",
+      "name": "特等奖",
+      "count": 1,
+      "prize": "iPhone 16 Pro"
+    }
+  ]
+}

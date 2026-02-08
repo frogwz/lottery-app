@@ -1,0 +1,120 @@
+/* App specific styles */
+
+/* Progress bar customization */
+[data-slot="progress-indicator"] {
+  background: linear-gradient(90deg, #f8bc36, #ff9d00) !important;
+}
+
+/* Scroll area customization */
+[data-slot="scroll-area-scrollbar"] {
+  background: rgba(248, 188, 54, 0.1);
+}
+
+[data-slot="scroll-area-thumb"] {
+  background: rgba(248, 188, 54, 0.3);
+}
+
+[data-slot="scroll-area-thumb"]:hover {
+  background: rgba(248, 188, 54, 0.5);
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Animation utilities */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-out-right {
+  animation: slide-out-right 0.4s ease-in forwards;
+}
+
+/* Glow effects */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(248, 188, 54, 0.4),
+              0 0 40px rgba(248, 188, 54, 0.2),
+              0 0 60px rgba(248, 188, 54, 0.1);
+}
+
+/* Text shadow for better visibility */
+.text-glow {
+  text-shadow: 0 0 10px rgba(248, 188, 54, 0.5),
+               0 0 20px rgba(248, 188, 54, 0.3);
+}
+
+/* Canvas responsive */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Prevent text selection */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Full screen support */
+:fullscreen {
+  background: black;
+}
+
+:-webkit-full-screen {
+  background: black;
+}
+
+:-moz-full-screen {
+  background: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  aside {
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
+  
+  aside {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 300px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

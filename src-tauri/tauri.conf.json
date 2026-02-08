@@ -1,0 +1,45 @@
+{
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "抽奖系统",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "security": {
+      "csp": null
+    },
+    "allowlist": {
+      "fs": {
+        "all": true
+      },
+      "dialog": {
+        "open": true
+      },
+      "path": {
+        "all": true
+      }
+    },
+    "windows": [
+      {
+        "title": "抽奖系统",
+        "width": 1280,
+        "height": 720,
+        "resizable": true
+      }
+    ],
+    "bundle": {
+      "active": true,
+      "targets": ["app"],
+      "identifier": "com.lucky.draw",
+      "icon": [
+        "icons/icon.icns",
+        "icons/icon.png"
+      ]
+    }
+  }
+}

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 43 93% 59%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 66%;
+    --accent: 38 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 93% 30%;
+    --input: 0 0% 15%;
+    --ring: 43 93% 59%;
+    --radius: 0.75rem;
+    
+    /* Custom colors */
+    --gold: #f8bc36;
+    --gold-dark: #e6a61c;
+    --gold-orange: #ff9d00;
+    --dark-bg: #000000;
+    --dark-card: #1a1a1a;
+    --text-muted: #a8a8a8;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white antialiased;
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, #f8bc36, #ff9d00);
+  }
+  
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #f8bc36, #ff9d00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gold-border {
+    border: 1px solid rgba(248, 188, 54, 0.3);
+  }
+  
+  .gold-glow {
+    box-shadow: 0 0 30px rgba(248, 188, 54, 0.5);
+  }
+  
+  .card-glass {
+    background: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(10px);
+  }
+  
+  .spotlight-bg {
+    background: radial-gradient(ellipse at center, rgba(40, 40, 40, 0.5) 0%, transparent 70%);
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 rounded-full font-bold text-black transition-all duration-300;
+    background: linear-gradient(135deg, #f8bc36, #ff9d00);
+    box-shadow: 0 0 30px rgba(248, 188, 54, 0.5);
+  }
+  
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 50px rgba(248, 188, 54, 0.7);
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background: transparent;
+    border: 2px solid #f8bc36;
+    color: #f8bc36;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(248, 188, 54, 0.1);
+  }
+  
+  .winner-card {
+    @apply p-3 rounded-lg transition-all duration-300;
+    background: rgba(248, 188, 54, 0.05);
+    border: 1px solid rgba(248, 188, 54, 0.2);
+  }
+  
+  .winner-card:hover {
+    background: rgba(248, 188, 54, 0.1);
+    transform: translateX(4px);
+  }
+  
+  .prize-card {
+    @apply p-6 rounded-2xl;
+    background: linear-gradient(135deg, rgba(248, 188, 54, 0.1), rgba(255, 157, 0, 0.05));
+    border: 1px solid rgba(248, 188, 54, 0.2);
+  }
+  
+  .scroll-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .number-badge {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold;
+    background: linear-gradient(135deg, #f8bc36, #ff9d00);
+    color: #000;
+  }
+  
+  .animate-pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-gold {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(248, 188, 54, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(248, 188, 54, 0.8);
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 5s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0%, 100% {
+      background-position: -200% center;
+    }
+    50% {
+      background-position: 200% center;
+    }
+  }
+  
+  .shimmer-text {
+    background: linear-gradient(90deg, #f8bc36 0%, #fff 25%, #f8bc36 50%, #fff 75%, #f8bc36 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 5s linear infinite;
+  }
+}
+
+/* Three.js canvas container */
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sphere-initial {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sphere-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f8bc36;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* UI overlay */
+.ui-overlay {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.ui-overlay > * {
+  pointer-events: auto;
+}
+
+/* Particle effects */
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #f8bc36;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  animation: confetti-fall 3s ease-out forwards;
+}

@@ -1,0 +1,12 @@
+# employees
+张三,zhangsan.png
+李四
+wangwu.jpg
+赵六
+
+# prizes
+lucky,幸运奖,20,精美礼品一份
+third,三等奖,10,蓝牙耳机
+second,二等奖,5,智能手表
+first,一等奖,2,平板电脑
+special,特等奖,1,iPhone 16 Pro
