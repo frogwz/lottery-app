@@ -34,7 +34,7 @@
     ],
     "bundle": {
       "active": true,
-      "targets": ["app", "msi", "nsis"],
+      "targets": ["app", "nsis"],
       "identifier": "com.lucky.draw",
       "icon": [
         "icons/icon.icns",
