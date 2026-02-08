@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "抽奖系统",
-    "version": "0.0.0"
+    "version": "1.0.0"
   },
   "tauri": {
     "security": {
@@ -34,7 +34,7 @@
     ],
     "bundle": {
       "active": true,
-      "targets": ["app"],
+      "targets": ["app", "msi", "nsis"],
       "identifier": "com.lucky.draw",
       "icon": [
         "icons/icon.icns",
