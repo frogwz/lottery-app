@@ -54,3 +54,10 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.args }}
+
+      - name: Upload portable executable (Windows only)
+        if: matrix.platform == 'windows-latest'
+        run: |
+          gh release upload ${{ github.ref_name }} "src-tauri/target/release/抽奖系统.exe#抽奖系统_${{ github.ref_name }}_x64_portable.exe" --clobber
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
